@@ -1,0 +1,2952 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "speech_to_text"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "speech_to_text"
+      },
+      {
+        "kind": "Import",
+        "name": "Speech",
+        "printedName": "Speech",
+        "declKind": "Import",
+        "moduleName": "speech_to_text"
+      },
+      {
+        "kind": "Import",
+        "name": "os.log",
+        "printedName": "os.log",
+        "declKind": "Import",
+        "moduleName": "speech_to_text"
+      },
+      {
+        "kind": "Import",
+        "name": "Try",
+        "printedName": "Try",
+        "declKind": "Import",
+        "moduleName": "speech_to_text"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SwiftSpeechToTextMethods",
+        "printedName": "SwiftSpeechToTextMethods",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "has_permission",
+            "printedName": "has_permission",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO14has_permissionyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO14has_permissionyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "initialize",
+            "printedName": "initialize",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO10initializeyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO10initializeyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "listen",
+            "printedName": "listen",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO6listenyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO6listenyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "stop",
+            "printedName": "stop",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO4stopyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO4stopyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "cancel",
+            "printedName": "cancel",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO6cancelyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO6cancelyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "locales",
+            "printedName": "locales",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO7localesyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO7localesyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextMethods.Type) -> speech_to_text.SwiftSpeechToTextMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO7unknownyA2CmF",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO7unknownyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "speech_to_text.SwiftSpeechToTextMethods?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextMethods",
+                    "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO8rawValueACSgSS_tcfc",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO8rawValueACSgSS_tcfc",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO8rawValueSSvp",
+            "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO8rawValueSSvp",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO8rawValueSSvg",
+                "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO8rawValueSSvg",
+                "moduleName": "speech_to_text",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14speech_to_text24SwiftSpeechToTextMethodsO",
+        "mangledName": "$s14speech_to_text24SwiftSpeechToTextMethodsO",
+        "moduleName": "speech_to_text",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SwiftSpeechToTextCallbackMethods",
+        "printedName": "SwiftSpeechToTextCallbackMethods",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "textRecognition",
+            "printedName": "textRecognition",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextCallbackMethods.Type) -> speech_to_text.SwiftSpeechToTextCallbackMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextCallbackMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                    "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextCallbackMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                        "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO0C11RecognitionyA2CmF",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO0C11RecognitionyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "notifyStatus",
+            "printedName": "notifyStatus",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextCallbackMethods.Type) -> speech_to_text.SwiftSpeechToTextCallbackMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextCallbackMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                    "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextCallbackMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                        "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO12notifyStatusyA2CmF",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO12notifyStatusyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "notifyError",
+            "printedName": "notifyError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextCallbackMethods.Type) -> speech_to_text.SwiftSpeechToTextCallbackMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextCallbackMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                    "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextCallbackMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                        "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO11notifyErroryA2CmF",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO11notifyErroryA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "soundLevelChange",
+            "printedName": "soundLevelChange",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SwiftSpeechToTextCallbackMethods.Type) -> speech_to_text.SwiftSpeechToTextCallbackMethods",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextCallbackMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                    "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SwiftSpeechToTextCallbackMethods",
+                        "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                        "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO16soundLevelChangeyA2CmF",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO16soundLevelChangeyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SwiftSpeechToTextCallbackMethods",
+                    "printedName": "speech_to_text.SwiftSpeechToTextCallbackMethods",
+                    "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueACSgSS_tcfc",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueACSgSS_tcfc",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueSSvp",
+            "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueSSvp",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueSSvg",
+                "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO8rawValueSSvg",
+                "moduleName": "speech_to_text",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14speech_to_text32SwiftSpeechToTextCallbackMethodsO",
+        "mangledName": "$s14speech_to_text32SwiftSpeechToTextCallbackMethodsO",
+        "moduleName": "speech_to_text",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeechToTextStatus",
+        "printedName": "SpeechToTextStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "listening",
+            "printedName": "listening",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO9listeningyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO9listeningyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "notListening",
+            "printedName": "notListening",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO12notListeningyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO12notListeningyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "unavailable",
+            "printedName": "unavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO11unavailableyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO11unavailableyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "available",
+            "printedName": "available",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO9availableyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO9availableyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "done",
+            "printedName": "done",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO4doneyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO4doneyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "doneNoResult",
+            "printedName": "doneNoResult",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextStatus.Type) -> speech_to_text.SpeechToTextStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextStatus",
+                        "printedName": "speech_to_text.SpeechToTextStatus",
+                        "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO12doneNoResultyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO12doneNoResultyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "speech_to_text.SpeechToTextStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextStatus",
+                    "printedName": "speech_to_text.SpeechToTextStatus",
+                    "usr": "s:14speech_to_text18SpeechToTextStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO8rawValueACSgSS_tcfc",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO8rawValueACSgSS_tcfc",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14speech_to_text18SpeechToTextStatusO8rawValueSSvp",
+            "mangledName": "$s14speech_to_text18SpeechToTextStatusO8rawValueSSvp",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14speech_to_text18SpeechToTextStatusO8rawValueSSvg",
+                "mangledName": "$s14speech_to_text18SpeechToTextStatusO8rawValueSSvg",
+                "moduleName": "speech_to_text",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14speech_to_text18SpeechToTextStatusO",
+        "mangledName": "$s14speech_to_text18SpeechToTextStatusO",
+        "moduleName": "speech_to_text",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeechToTextErrors",
+        "printedName": "SpeechToTextErrors",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "onDeviceError",
+            "printedName": "onDeviceError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextErrors.Type) -> speech_to_text.SpeechToTextErrors",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextErrors",
+                    "printedName": "speech_to_text.SpeechToTextErrors",
+                    "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextErrors.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextErrors",
+                        "printedName": "speech_to_text.SpeechToTextErrors",
+                        "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO13onDeviceErroryA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO13onDeviceErroryA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "noRecognizerError",
+            "printedName": "noRecognizerError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextErrors.Type) -> speech_to_text.SpeechToTextErrors",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextErrors",
+                    "printedName": "speech_to_text.SpeechToTextErrors",
+                    "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextErrors.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextErrors",
+                        "printedName": "speech_to_text.SpeechToTextErrors",
+                        "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO17noRecognizerErroryA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO17noRecognizerErroryA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "listenFailedError",
+            "printedName": "listenFailedError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextErrors.Type) -> speech_to_text.SpeechToTextErrors",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextErrors",
+                    "printedName": "speech_to_text.SpeechToTextErrors",
+                    "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextErrors.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextErrors",
+                        "printedName": "speech_to_text.SpeechToTextErrors",
+                        "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO17listenFailedErroryA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO17listenFailedErroryA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "missingOrInvalidArg",
+            "printedName": "missingOrInvalidArg",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.SpeechToTextErrors.Type) -> speech_to_text.SpeechToTextErrors",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextErrors",
+                    "printedName": "speech_to_text.SpeechToTextErrors",
+                    "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.SpeechToTextErrors.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeechToTextErrors",
+                        "printedName": "speech_to_text.SpeechToTextErrors",
+                        "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO19missingOrInvalidArgyA2CmF",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO19missingOrInvalidArgyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "speech_to_text.SpeechToTextErrors?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechToTextErrors",
+                    "printedName": "speech_to_text.SpeechToTextErrors",
+                    "usr": "s:14speech_to_text18SpeechToTextErrorsO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO8rawValueACSgSS_tcfc",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO8rawValueACSgSS_tcfc",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14speech_to_text18SpeechToTextErrorsO8rawValueSSvp",
+            "mangledName": "$s14speech_to_text18SpeechToTextErrorsO8rawValueSSvp",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14speech_to_text18SpeechToTextErrorsO8rawValueSSvg",
+                "mangledName": "$s14speech_to_text18SpeechToTextErrorsO8rawValueSSvg",
+                "moduleName": "speech_to_text",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14speech_to_text18SpeechToTextErrorsO",
+        "mangledName": "$s14speech_to_text18SpeechToTextErrorsO",
+        "moduleName": "speech_to_text",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ListenMode",
+        "printedName": "ListenMode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "deviceDefault",
+            "printedName": "deviceDefault",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.ListenMode.Type) -> speech_to_text.ListenMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListenMode",
+                    "printedName": "speech_to_text.ListenMode",
+                    "usr": "s:14speech_to_text10ListenModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.ListenMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListenMode",
+                        "printedName": "speech_to_text.ListenMode",
+                        "usr": "s:14speech_to_text10ListenModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text10ListenModeO13deviceDefaultyA2CmF",
+            "mangledName": "$s14speech_to_text10ListenModeO13deviceDefaultyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "dictation",
+            "printedName": "dictation",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.ListenMode.Type) -> speech_to_text.ListenMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListenMode",
+                    "printedName": "speech_to_text.ListenMode",
+                    "usr": "s:14speech_to_text10ListenModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.ListenMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListenMode",
+                        "printedName": "speech_to_text.ListenMode",
+                        "usr": "s:14speech_to_text10ListenModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text10ListenModeO9dictationyA2CmF",
+            "mangledName": "$s14speech_to_text10ListenModeO9dictationyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "search",
+            "printedName": "search",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.ListenMode.Type) -> speech_to_text.ListenMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListenMode",
+                    "printedName": "speech_to_text.ListenMode",
+                    "usr": "s:14speech_to_text10ListenModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.ListenMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListenMode",
+                        "printedName": "speech_to_text.ListenMode",
+                        "usr": "s:14speech_to_text10ListenModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text10ListenModeO6searchyA2CmF",
+            "mangledName": "$s14speech_to_text10ListenModeO6searchyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Var",
+            "name": "confirmation",
+            "printedName": "confirmation",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(speech_to_text.ListenMode.Type) -> speech_to_text.ListenMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListenMode",
+                    "printedName": "speech_to_text.ListenMode",
+                    "usr": "s:14speech_to_text10ListenModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "speech_to_text.ListenMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListenMode",
+                        "printedName": "speech_to_text.ListenMode",
+                        "usr": "s:14speech_to_text10ListenModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14speech_to_text10ListenModeO12confirmationyA2CmF",
+            "mangledName": "$s14speech_to_text10ListenModeO12confirmationyA2CmF",
+            "moduleName": "speech_to_text"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "speech_to_text.ListenMode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListenMode",
+                    "printedName": "speech_to_text.ListenMode",
+                    "usr": "s:14speech_to_text10ListenModeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14speech_to_text10ListenModeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s14speech_to_text10ListenModeO8rawValueACSgSi_tcfc",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14speech_to_text10ListenModeO8rawValueSivp",
+            "mangledName": "$s14speech_to_text10ListenModeO8rawValueSivp",
+            "moduleName": "speech_to_text",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14speech_to_text10ListenModeO8rawValueSivg",
+                "mangledName": "$s14speech_to_text10ListenModeO8rawValueSivg",
+                "moduleName": "speech_to_text",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14speech_to_text10ListenModeO",
+        "mangledName": "$s14speech_to_text10ListenModeO",
+        "moduleName": "speech_to_text",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SwiftSpeechToTextPlugin",
+        "printedName": "SwiftSpeechToTextPlugin",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(cm)registerWithRegistrar:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC8register4withySo07FlutterH9Registrar_p_tFZ",
+            "moduleName": "speech_to_text",
+            "static": true,
+            "objc_name": "registerWithRegistrar:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(_:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterMethodCall",
+                "printedName": "Flutter.FlutterMethodCall",
+                "usr": "c:objc(cs)FlutterMethodCall"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)handleMethodCall:result:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF",
+            "moduleName": "speech_to_text",
+            "objc_name": "handleMethodCall:result:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SwiftSpeechToTextPlugin",
+                "printedName": "speech_to_text.SwiftSpeechToTextPlugin",
+                "usr": "c:@M@speech_to_text@objc(cs)SwiftSpeechToTextPlugin"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)init",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginCACycfc",
+            "moduleName": "speech_to_text",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognizer",
+            "printedName": "speechRecognizer(_:availabilityDidChange:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognizer",
+                "printedName": "Speech.SFSpeechRecognizer",
+                "usr": "c:objc(cs)SFSpeechRecognizer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognizer:availabilityDidChange:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A10Recognizer_21availabilityDidChangeySo08SFSpeechI0C_SbtF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognizer:availabilityDidChange:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionDidDetectSpeech",
+            "printedName": "speechRecognitionDidDetectSpeech(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionDidDetectSpeech:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0a20RecognitionDidDetectE0yySo08SFSpeechI4TaskCF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionDidDetectSpeech:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionTaskFinishedReadingAudio",
+            "printedName": "speechRecognitionTaskFinishedReadingAudio(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionTaskFinishedReadingAudio:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A35RecognitionTaskFinishedReadingAudioyySo08SFSpeechiJ0CF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionTaskFinishedReadingAudio:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionTaskWasCancelled",
+            "printedName": "speechRecognitionTaskWasCancelled(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionTaskWasCancelled:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A27RecognitionTaskWasCancelledyySo08SFSpeechiJ0CF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionTaskWasCancelled:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionTask",
+            "printedName": "speechRecognitionTask(_:didFinishSuccessfully:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionTask:didFinishSuccessfully:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A15RecognitionTask_21didFinishSuccessfullyySo08SFSpeechiJ0C_SbtF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionTask:didFinishSuccessfully:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionTask",
+            "printedName": "speechRecognitionTask(_:didHypothesizeTranscription:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFTranscription",
+                "printedName": "Speech.SFTranscription",
+                "usr": "c:objc(cs)SFTranscription"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionTask:didHypothesizeTranscription:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A15RecognitionTask_27didHypothesizeTranscriptionySo08SFSpeechiJ0C_So15SFTranscriptionCtF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionTask:didHypothesizeTranscription:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechRecognitionTask",
+            "printedName": "speechRecognitionTask(_:didFinishRecognition:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionTask",
+                "printedName": "Speech.SFSpeechRecognitionTask",
+                "usr": "c:objc(cs)SFSpeechRecognitionTask"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSpeechRecognitionResult",
+                "printedName": "Speech.SFSpeechRecognitionResult",
+                "usr": "c:objc(cs)SFSpeechRecognitionResult"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)speechRecognitionTask:didFinishRecognition:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC0A15RecognitionTask_09didFinishI0ySo08SFSpeechiJ0C_So0mI6ResultCtF",
+            "moduleName": "speech_to_text",
+            "objc_name": "speechRecognitionTask:didFinishRecognition:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "audioPlayerDidFinishPlaying",
+            "printedName": "audioPlayerDidFinishPlaying(_:successfully:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVAudioPlayer",
+                "printedName": "AVFAudio.AVAudioPlayer",
+                "usr": "c:objc(cs)AVAudioPlayer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@speech_to_text@objc(cs)SwiftSpeechToTextPlugin(im)audioPlayerDidFinishPlaying:successfully:",
+            "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC27audioPlayerDidFinishPlaying_12successfullyySo07AVAudioJ0C_SbtF",
+            "moduleName": "speech_to_text",
+            "objc_name": "audioPlayerDidFinishPlaying:successfully:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@speech_to_text@objc(cs)SwiftSpeechToTextPlugin",
+        "mangledName": "$s14speech_to_text23SwiftSpeechToTextPluginC",
+        "moduleName": "speech_to_text",
+        "intro_iOS": "10.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 780,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 803,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 823,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 849,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 780,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 803,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 823,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 849,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 780,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 803,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 823,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 849,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2001,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2043,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2088,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2122,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2155,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2391,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2447,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 2562,
+      "length": 26,
+      "value": "\"com.csdcorp.speechToText\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 2600,
+      "length": 8,
+      "value": "\"plugin\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 2738,
+      "length": 35,
+      "value": "\"plugin.csdcorp.com\/speech_to_text\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3627,
+      "length": 16,
+      "value": "\"partialResults\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3699,
+      "length": 10,
+      "value": "\"onDevice\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3771,
+      "length": 12,
+      "value": "\"listenMode\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3839,
+      "length": 12,
+      "value": "\"sampleRate\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3912,
+      "length": 17,
+      "value": "\"autoPunctuation\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 3989,
+      "length": 15,
+      "value": "\"enableHaptics\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 4238,
+      "length": 109,
+      "value": "\"Missing arg partialResults, onDevice, listenMode, autoPunctuatio, enableHaptics and sampleRate are required\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 4555,
+      "length": 10,
+      "value": "\"localeId\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 4902,
+      "length": 67,
+      "value": "\"invalid value for listenMode, must be 0-2, was \""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 4968,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 5601,
+      "length": 33,
+      "value": "\"Unrecognized method: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6249,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6867,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 6919,
+      "length": 24,
+      "value": "\"User denied permission\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7110,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 7239,
+      "length": 31,
+      "value": "\"Permission permanently denied\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7334,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 7433,
+      "length": 41,
+      "value": "\"Device restriction prevented initialize\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7538,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 7591,
+      "length": 39,
+      "value": "\"Has permissions continuing with setup\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 7984,
+      "length": 44,
+      "value": "\"assets\/sounds\/speech_to_text_listening.m4r\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 8063,
+      "length": 39,
+      "value": "\"assets\/sounds\/speech_to_text_stop.m4r\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 8136,
+      "length": 41,
+      "value": "\"assets\/sounds\/speech_to_text_cancel.m4r\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9020,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 9355,
+      "length": 21,
+      "value": "\"Error no input node\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9436,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9545,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10168,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10233,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10454,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10617,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10778,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10843,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11063,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11226,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 11638,
+      "length": 35,
+      "value": "\"Error stopping engine: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 11908,
+      "length": 33,
+      "value": "\"Error removing trap: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 12338,
+      "length": 35,
+      "value": "\"Error stopping listen: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12500,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 12590,
+      "length": 32,
+      "value": "\"Error deactivation: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12912,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12937,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13281,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13404,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13433,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 13749,
+      "length": 36,
+      "value": "\"Failed to create speech recognizer\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 14137,
+      "length": 55,
+      "value": "\"on device recognition is not supported on this device\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14697,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14913,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15290,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15605,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15624,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 15681,
+      "length": 30,
+      "value": "\"Not enough available inputs.\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15899,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16009,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16126,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 17822,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18003,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18072,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 18096,
+      "length": 35,
+      "value": "\"Error starting listen: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18384,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 18537,
+      "length": 21,
+      "value": "\"error_listen_failed\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18571,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 18975,
+      "length": 23,
+      "value": "\"Could not encode JSON\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19357,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19641,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19686,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 20145,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 20205,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 20968,
+      "length": 3,
+      "value": "\":\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 20979,
+      "length": 3,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 21005,
+      "length": 35,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 21022,
+      "length": 1,
+      "value": "\":\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 21039,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "Array",
+      "offset": 21302,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 21832,
+      "length": 33,
+      "value": "\"Encoded JSON result: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 22064,
+      "length": 23,
+      "value": "\"Could not encode JSON\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 22266,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 22296,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "FloatLiteral",
+      "offset": 22346,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 22598,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 22616,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 22811,
+      "length": 26,
+      "value": "\"invokeFlutter %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1273,
+      "length": 23,
+      "value": "\"speech_to_text.SwiftSpeechToTextPlugin\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 23362,
+      "length": 34,
+      "value": "\"Availability changed: %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 23887,
+      "length": 22,
+      "value": "\"FinishedReadingAudio\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 23945,
+      "length": 24,
+      "value": "\"Finished reading audio\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 24250,
+      "length": 18,
+      "value": "\"TaskWasCancelled\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 24304,
+      "length": 24,
+      "value": "\"Canceled reading audio\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 24639,
+      "length": 20,
+      "value": "\"FinishSuccessfully\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 24695,
+      "length": 20,
+      "value": "\"FinishSuccessfully\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 25049,
+      "length": 3,
+      "value": "201"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25085,
+      "length": 34,
+      "value": "\"error_speech_recognizer_disabled\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 25141,
+      "length": 3,
+      "value": "203"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25177,
+      "length": 13,
+      "value": "\"error_retry\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 25212,
+      "length": 4,
+      "value": "1110"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25249,
+      "length": 16,
+      "value": "\"error_no_match\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25342,
+      "length": 29,
+      "value": "\"error_unknown (\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25369,
+      "length": 1,
+      "value": "\")\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 25478,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 25769,
+      "length": 23,
+      "value": "\"Could not encode JSON\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 26349,
+      "length": 26,
+      "value": "\"HypothesizeTranscription\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 26436,
+      "length": 26,
+      "value": "\"HypothesizeTranscription\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 26531,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 26718,
+      "length": 19,
+      "value": "\"FinishRecognition\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 26773,
+      "length": 30,
+      "value": "\"FinishRecognition %{PUBLIC}@\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/.pub-cache\/hosted\/pub.dev\/speech_to_text-6.6.0\/ios\/Classes\/SwiftSpeechToTextPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 27120,
+      "length": 35,
+      "value": "\"%{PUBLIC}@ with error: %{PUBLIC}@\""
+    }
+  ]
+}

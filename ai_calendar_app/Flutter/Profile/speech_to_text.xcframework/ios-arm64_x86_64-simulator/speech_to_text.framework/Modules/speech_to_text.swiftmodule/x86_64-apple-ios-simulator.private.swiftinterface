@@ -1,0 +1,113 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name speech_to_text
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Flutter
+import Speech
+import Swift
+import Try
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@_exported import speech_to_text
+public enum SwiftSpeechToTextMethods : Swift.String {
+  case has_permission
+  case initialize
+  case listen
+  case stop
+  case cancel
+  case locales
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SwiftSpeechToTextCallbackMethods : Swift.String {
+  case textRecognition
+  case notifyStatus
+  case notifyError
+  case soundLevelChange
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SpeechToTextStatus : Swift.String {
+  case listening
+  case notListening
+  case unavailable
+  case available
+  case done
+  case doneNoResult
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SpeechToTextErrors : Swift.String {
+  case onDeviceError
+  case noRecognizerError
+  case listenFailedError
+  case missingOrInvalidArg
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ListenMode : Swift.Int {
+  case deviceDefault
+  case dictation
+  case search
+  case confirmation
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 10.0, *)
+public class SwiftSpeechToTextPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin {
+  @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
+  @objc public func handle(_ call: Flutter.FlutterMethodCall, result: @escaping Flutter.FlutterResult)
+  @objc deinit
+}
+@available(iOS 10.0, *)
+extension speech_to_text.SwiftSpeechToTextPlugin : Speech.SFSpeechRecognizerDelegate {
+  @objc dynamic public func speechRecognizer(_ speechRecognizer: Speech.SFSpeechRecognizer, availabilityDidChange available: Swift.Bool)
+}
+@available(iOS 10.0, *)
+extension speech_to_text.SwiftSpeechToTextPlugin : Speech.SFSpeechRecognitionTaskDelegate {
+  @objc dynamic public func speechRecognitionDidDetectSpeech(_ task: Speech.SFSpeechRecognitionTask)
+  @objc dynamic public func speechRecognitionTaskFinishedReadingAudio(_ task: Speech.SFSpeechRecognitionTask)
+  @objc dynamic public func speechRecognitionTaskWasCancelled(_ task: Speech.SFSpeechRecognitionTask)
+  @objc dynamic public func speechRecognitionTask(_ task: Speech.SFSpeechRecognitionTask, didFinishSuccessfully successfully: Swift.Bool)
+  @objc dynamic public func speechRecognitionTask(_ task: Speech.SFSpeechRecognitionTask, didHypothesizeTranscription transcription: Speech.SFTranscription)
+  @objc dynamic public func speechRecognitionTask(_ task: Speech.SFSpeechRecognitionTask, didFinishRecognition recognitionResult: Speech.SFSpeechRecognitionResult)
+}
+@available(iOS 10.0, *)
+extension speech_to_text.SwiftSpeechToTextPlugin : AVFAudio.AVAudioPlayerDelegate {
+  @objc dynamic public func audioPlayerDidFinishPlaying(_ player: AVFAudio.AVAudioPlayer, successfully flag: Swift.Bool)
+}
+extension speech_to_text.SwiftSpeechToTextMethods : Swift.Equatable {}
+extension speech_to_text.SwiftSpeechToTextMethods : Swift.Hashable {}
+extension speech_to_text.SwiftSpeechToTextMethods : Swift.RawRepresentable {}
+extension speech_to_text.SwiftSpeechToTextCallbackMethods : Swift.Equatable {}
+extension speech_to_text.SwiftSpeechToTextCallbackMethods : Swift.Hashable {}
+extension speech_to_text.SwiftSpeechToTextCallbackMethods : Swift.RawRepresentable {}
+extension speech_to_text.SpeechToTextStatus : Swift.Equatable {}
+extension speech_to_text.SpeechToTextStatus : Swift.Hashable {}
+extension speech_to_text.SpeechToTextStatus : Swift.RawRepresentable {}
+extension speech_to_text.SpeechToTextErrors : Swift.Equatable {}
+extension speech_to_text.SpeechToTextErrors : Swift.Hashable {}
+extension speech_to_text.SpeechToTextErrors : Swift.RawRepresentable {}
+extension speech_to_text.ListenMode : Swift.Equatable {}
+extension speech_to_text.ListenMode : Swift.Hashable {}
+extension speech_to_text.ListenMode : Swift.RawRepresentable {}

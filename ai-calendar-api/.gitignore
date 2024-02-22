@@ -1,0 +1,9 @@
+.env
+AI-Calendar client secret.json
+empty.txt
+venc/
+test.py
+eventModel.py
+db/
+.cosine
+.vercel

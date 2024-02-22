@@ -1,0 +1,7 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/dhanushvardhan/Projects/ai-calendar/ai_calendar_app/Flutter/Profile/iphoneos/Profile-iphoneos/RecaptchaInterop/RecaptchaInterop.framework/RecaptchaInterop'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x33, size: 0x8, addend: 0x0, symName: _RecaptchaInteropVersionString, symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x67, size: 0x8, addend: 0x0, symName: _RecaptchaInteropVersionNumber, symObjAddr: 0x30, symBinAddr: 0x4030, symSize: 0x0 }
+...

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1014386977908",
+    "project_id": "ai-calendar-60f46",
+    "storage_bucket": "ai-calendar-60f46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014386977908:android:9dc1f535c73032404ff521",
+        "android_client_info": {
+          "package_name": "com.example.ai_calendar_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014386977908-opdhsu9f7brccqmjaqa1ca8t14mj0b54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ai_calendar_app",
+            "certificate_hash": "b867f26ccddb5b73d1646405ee037f7914ac5475"
+          }
+        },
+        {
+          "client_id": "1014386977908-nd93ku0lontvrrii9hea3jelj3j8eqru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtYgn6Lvu9BghK1wQvmXVVEF4lDt1s_Ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014386977908-nd93ku0lontvrrii9hea3jelj3j8eqru.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1014386977908-m32qo1kpisvb24s386e5qmqq0bm712kh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.aiCalendarApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,217 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Try",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "tryErrorDomain",
+        "printedName": "tryErrorDomain",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:3Try14tryErrorDomainSSvp",
+        "mangledName": "$s3Try14tryErrorDomainSSvp",
+        "moduleName": "Try",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:3Try14tryErrorDomainSSvg",
+            "mangledName": "$s3Try14tryErrorDomainSSvg",
+            "moduleName": "Try",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "tryExceptionErrorCode",
+        "printedName": "tryExceptionErrorCode",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Int",
+            "printedName": "Swift.Int",
+            "usr": "s:Si"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:3Try21tryExceptionErrorCodeSivp",
+        "mangledName": "$s3Try21tryExceptionErrorCodeSivp",
+        "moduleName": "Try",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:3Try21tryExceptionErrorCodeSivg",
+            "mangledName": "$s3Try21tryExceptionErrorCodeSivg",
+            "moduleName": "Try",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "tryExceptionErrorKey",
+        "printedName": "tryExceptionErrorKey",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:3Try20tryExceptionErrorKeySSvp",
+        "mangledName": "$s3Try20tryExceptionErrorKeySSvp",
+        "moduleName": "Try",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:3Try20tryExceptionErrorKeySSvg",
+            "mangledName": "$s3Try20tryExceptionErrorKeySSvg",
+            "moduleName": "Try",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "trap",
+        "printedName": "trap(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          },
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:3Try4trapyyyycKF",
+        "mangledName": "$s3Try4trapyyyycKF",
+        "moduleName": "Try",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "throwing": true,
+        "funcSelfKind": "NonMutating"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/dhanushvardhan\/Projects\/ai-calendar\/ai_calendar_app\/ios\/Pods\/Try\/Try\/trap.swift",
+      "kind": "StringLiteral",
+      "offset": 124,
+      "length": 5,
+      "value": "\"Try\""
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/Projects\/ai-calendar\/ai_calendar_app\/ios\/Pods\/Try\/Try\/trap.swift",
+      "kind": "IntegerLiteral",
+      "offset": 165,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dhanushvardhan\/Projects\/ai-calendar\/ai_calendar_app\/ios\/Pods\/Try\/Try\/trap.swift",
+      "kind": "StringLiteral",
+      "offset": 201,
+      "length": 11,
+      "value": "\"exception\""
+    }
+  ]
+}

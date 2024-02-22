@@ -1,9 +1,8 @@
 Flask
-google-generativeai==0.3.2
+google-generativeai
 google-api-python-client
 google-auth
 google-auth-httplib2
 google-auth-oauthlib
 python-dotenv
 openai
-waitress

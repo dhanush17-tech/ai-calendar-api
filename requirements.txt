@@ -1,5 +1,5 @@
 Flask
-google-generativeai
+google-generativeai==0.3.2
 google-api-python-client
 google-auth
 google-auth-httplib2

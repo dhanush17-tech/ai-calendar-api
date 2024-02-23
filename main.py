@@ -15,7 +15,7 @@ app = Flask(__name__)
 import google.generativeai as genai
 
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = " "
 
 client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY")
@@ -358,6 +358,22 @@ def editGoogleCalendarEvent(accessToken: str, refreshToken: str, jsonData, timez
             print(f"Error editing event {event['id']}: {e}")
             return False
     return jsonData["message"]
+
+
+
+@app.route("/todaysSummary", methods=["POST"])
+def todaysSummary():
+
+    calendar=request.json.get("calendar")
+    
+    response = genai.GenerativeModel('gemini-pro').generate_content(f"""You are my Personal Assistant, and I need a hand. Let's check what's up for today, {datetime.datetime.now()}, from my {calendar}. If we're looking at a day with zero plans, give me a cheerful heads-up to relax and enjoy my free time. The response should be a JSON object with a "message" key. The message needs to be in MARKDOWN format, featuring bullet points if there are any events. Aim for a tone that's light, breezy, and easy for anyone to get - no need for dates in ISO or anything too formal. IF there are no events then keep the message VERY SHORT""").text.replace("`", '').replace("json", "")
+    print(response)
+    jsonData=json.loads(response)
+    print(jsonData)
+    if jsonData:
+        return jsonify({"success": True, "message":jsonData["message"], "response": jsonData["message"]}), 200
+    else:
+        return jsonify({"success": True, "message": "Today's summary"})
 
 if __name__ == "__main__":
     app.run(port=os.getenv("PORT", default=8000), host="0.0.0.0", debug=True)

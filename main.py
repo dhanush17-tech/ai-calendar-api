@@ -223,7 +223,7 @@ Remember, I'll structure my responses in JSON for clarity and ease of use.
         print("Edit event")
         edit_event = editGoogleCalendarEvent(accessToken, refreshToken, jsonData, timeZone)
         if edit_event:
-            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
         else:
             return jsonify({"success": False, "response": jsonData})
     
@@ -231,24 +231,24 @@ Remember, I'll structure my responses in JSON for clarity and ease of use.
         print("Delete event")
         delete_event = deleteGoogleCalendarEvent(accessToken, refreshToken, jsonData, timeZone)
         if delete_event:
-            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
         else:
             return jsonify({"success": False, "response": jsonData})
     elif(jsonData["action"]=="ADD"):
         print("Add event")
         add_event = create_google_calendar_events(jsonData, accessToken,refreshToken, timeZone)
         if add_event:
-            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+            return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
         else:
             return jsonify({"success": False, "response": jsonData})
     elif (jsonData["action"]=="MORE"):
         print("More event")
-        return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+        return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
     elif(jsonData["action"]=="GENERAL"):
         print("General chat")
-        return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+        return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
     else:
-       return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"]})
+       return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
        
 
 def create_google_calendar_events(events, accessToken, refreshToken, timezone):
@@ -291,10 +291,11 @@ def create_google_calendar_events(events, accessToken, refreshToken, timezone):
             created_events_info.append({'eventLink': response.get('htmlLink'), 'meetingLink': meeting_link})
         except HttpError as e:
             print(f"HttpError when creating event: {e}")
-            continue  # Skip this event and continue with the next one
+            return False  # Skip this event and continue with the next one
         except Exception as e:
             print(f"Error creating event: {e}")
-            continue  # Skip this event and continue with the next one
+            
+            return False  # Skip this event and continue with the next one
 
     message = events.get('message', "Events created successfully.")
     # Append meeting links to the message if available
@@ -366,7 +367,7 @@ def todaysSummary():
 
     calendar=request.json.get("calendar")
     
-    response = genai.GenerativeModel('gemini-pro').generate_content(f"""You are my Personal Assistant, and I need a hand. Let's check what's up for today, {datetime.datetime.now()}, from my {calendar}. If we're looking at a day with zero plans, give me a cheerful heads-up to relax and enjoy my free time. The response should be a JSON object with a "message" key. The message needs to be in MARKDOWN format, featuring bullet points if there are any events. Aim for a tone that's light, breezy, and easy for anyone to get - no need for dates in ISO or anything too formal. IF there are no events then keep the message VERY SHORT""").text.replace("`", '').replace("json", "")
+    response = genai.GenerativeModel('gemini-pro').generate_content(f"""You are my Personal Assistant, and I need a hand. Let's check what's up for today, {datetime.datetime.now()}, from my {calendar}. If we're looking at a day with zero plans, give me a cheerful heads-up to relax and enjoy my free time. The response should be a JSON object with a "message" key. The message needs to be in MARKDOWN format, featuring bullet points if there are any events. Aim for a tone that's light, breezy, and easy for anyone to get - no need for dates in ISO or anything too formal. IF there are no events then keep the message VERY SHORT. message should ONLY be in English.""").text.replace("`", '').replace("json", "")
     print(response)
     jsonData=json.loads(response)
     print(jsonData)

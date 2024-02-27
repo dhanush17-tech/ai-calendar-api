@@ -6,3 +6,4 @@ google-auth-httplib2
 google-auth-oauthlib
 python-dotenv
 openai
+python-dotenv

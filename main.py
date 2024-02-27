@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+import re
 import time
 from flask import Flask, request, jsonify
 # from embedchain import App
@@ -10,25 +11,46 @@ import datetime
 from dotenv import load_dotenv
 from openai import OpenAI
 from googleapiclient.errors import HttpError
-
-app = Flask(__name__)
 import google.generativeai as genai
 
+app = Flask(__name__)
 
-os.environ["OPENAI_API_KEY"] = " "
+ 
+# client = OpenAI(
+#     api_key=os.environ.get("OPENAI_API_KEY")
+# )
 
-client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY")
-)
+
   
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+
+
+
+@app.post("/search")
+async def handle_search():
+    query = request.json.get("query")
+    context=request.json.get("context")
+    
+    response=genai.GenerativeModel('gemini-1.0-pro').generate_content(f"""
+                                                                  THE RESPONSE SHOULD BE IN JSON
+                                                                  I'm your journal/notes keep, I will help you extract information from your journal/notes that is provided here {context}. THE answer should be short and very concise. You are very chill and cool. You assist them and counsel then of they ask you to do so. THE response SHOULD be ONLY a JSON with 'message': Your reply SHOULD be in MARKDOWN with lists, titles and others when needed. 
+                                                                  This is the query {query}
+                                                               """).text.replace("`", '').replace("json", "")
+    response=json.loads(response)
+    print(response)
+    try:
+        return jsonify({"message": response["message"]}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({"message": str(e)}), 500
+
+    
 
 @app.route("/listEvents", methods=["POST"])
 def list_events():
     accessToken = request.json.get("accessToken")
     refreshToken = request.json.get("refreshToken")
-    print(accessToken)
-    print(refreshToken)
+   
     try:
         events = listGoogleCalendarEvents(accessToken, refreshToken)
         return jsonify({"success": True, "events": events}), 200
@@ -94,6 +116,7 @@ def listGoogleCalendarEvents(accessToken: str, refreshToken: str):
         
         # Append the dictionary to the list of extracted events
         extracted_events.append(event_dict)
+    print(extracted_events)
 
     return extracted_events
 
@@ -107,11 +130,14 @@ def chat():
     refreshToken = request.json.get("refreshToken")
     timeZone = request.json.get("timeZone")
 
-    current_date = datetime.datetime.now()
+    current_date = request.json.get("currentDate")
 
     system_prompt = f"""
+    DONE ASK MULTIPLE 'MORE' questions, if the user fails to respond to the specifics after a single try, then just PICK the best time with your knowledge about the Users calendar.
     THE RESPONSE SHOULD ONLY BE A JSON. NO EXTRA TEXT
-Hey there! 🌟 As your digital Personal Assistant, I'm here to ensure your day runs as smoothly as possible, based on today's date, {current_date}
+ You are a digital Personal Assistant, You are here to ensure your day runs as smoothly as possible, based on today's date, {current_date}
+
+You are here to assist with your scheduling needs, including meetings (which will be online, including the meeting link in my response).
 
 1. Editing Events ("EDIT"):
 When the action is "EDIT", your response should include a summary of the changes made to the events and the updated events data. The JSON structure for an "EDIT" action looks like this:
@@ -121,13 +147,14 @@ When the action is "EDIT", your response should include a summary of the changes
   "message": "Summary of the changes you've made.  Answer to the question in a chill human like way",
   "events": [
     {{
-      "startDate": "Start time of the event in ISO8601 format.",
-      "endDate": "End time of the event in ISO8601 format.",
+      "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
+      "endDate": "End time of the event in ISO8601 format. MANDATORY",
       "title": "Brief description of the event.",
       "description": "Further details about the event (optional).",
       "isOnlineMeeting": true or false,
       "attendees": ["List of participants involved in the event (optional)."],
-      "location": "Physical location of the event (optional)."
+      "location": "Physical location of the event (optional).",
+      "id": "ID of the event to be edited."
     }}
   ],
   "action": "EDIT"
@@ -135,11 +162,11 @@ When the action is "EDIT", your response should include a summary of the changes
  
 2. Deleting Events ("DELETE"):
 When the action is "DELETE", your response should include a summary of the deleted events. The JSON structure for a "DELETE" action looks like this:
-
+IF THE USER ASKS TO CLEAR THE CALENDAR FOR TODAY OR THE USER ASKS TO DELETE ALL EVENTS, THEN DELETE ALL EVENTS FOR TODAY. Use {datetime.datetime.now()} to understand TODAY or other REALTIVE DATE.
 All THREE fields are REQUIRED for the "DELETE" action
 {{
   "message": "Summary of the events you've deleted.  Answer to the question in a chill human like way",
-  "ids": ["List of IDs of the events you've deleted."],
+  "ids": ["ONLY THE List of IDs of the events that SHOULD BE deleted."],
   "action": "DELETE"
 }}
  
@@ -166,7 +193,7 @@ All THREE fields are REQUIRED for the "ADD" action
  
 4. General Chat ("GENERAL"):
 When the action is "GENERAL", your response should include a summary of the general chat. The JSON structure for a "GENERAL" action looks like this:
-
+If the user asks to summarize their day, the 'message' SHOULD ONLY be a MARKDOWN TEXT.
 All THREE fields are REQUIRED for the "GENERAL" action
 {{
   "message": Answer to the question in a chill human like way,
@@ -184,7 +211,7 @@ All THREE fields are REQUIRED for the "MORE" action
     }}
 
 
-I'm here to help you make the most of your day. Let's get started! 🚀
+You are here to help you make the most of your day. Let's get started! 🚀
 
 
 - The context for our chat:
@@ -210,14 +237,15 @@ Remember, I'll structure my responses in JSON for clarity and ease of use.
 #         ],
 #    )   
 
-    chat_prompt= genai.GenerativeModel('gemini-pro').generate_content(system_prompt).text.replace("`", '').replace("json","")
+    chat_prompt= genai.GenerativeModel('gemini-1.0-pro').generate_content(system_prompt).text.replace("`", '').replace("json","")
     
    
     # print(chat_prompt.choices[0].message.content)
     # jsonData=json.loads(chat_prompt.choices[0].message.content.replace("`", '').replace("json",""))
     
-    print(chat_prompt)
+    # print(jsonData)
     jsonData=json.loads(chat_prompt)
+    print(jsonData)
     # return jsonify({"success": True, "message":jsonData["message"], "response": jsonData["message"]}), 200
     if(jsonData["action"]=="EDIT"):
         print("Edit event")
@@ -229,7 +257,7 @@ Remember, I'll structure my responses in JSON for clarity and ease of use.
     
     elif(jsonData["action"]=="DELETE"):
         print("Delete event")
-        delete_event = deleteGoogleCalendarEvent(accessToken, refreshToken, jsonData, timeZone)
+        delete_event = deleteGoogleCalendarEvent(accessToken, refreshToken, jsonData,)
         if delete_event:
             return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
         else:
@@ -250,6 +278,10 @@ Remember, I'll structure my responses in JSON for clarity and ease of use.
     else:
        return jsonify({"success": True,"message":jsonData["message"], "response": jsonData["message"],"action":jsonData["action"],})
        
+def validate_email(email):
+    """Simple email format validation."""
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return re.match(pattern, email)
 
 def create_google_calendar_events(events, accessToken, refreshToken, timezone):
     creds = Credentials(token=accessToken,
@@ -277,13 +309,15 @@ def create_google_calendar_events(events, accessToken, refreshToken, timezone):
         }
 
         attendees = event.get('attendees', [])
-        if attendees:  # Add attendees only if they exist
-            event_body['attendees'] = [{'email': attendee} for attendee in attendees]
+        # Validate email format for each attendee
+        valid_attendees = [attendee for attendee in attendees if validate_email(attendee)]
+        if valid_attendees:
+            event_body['attendees'] = [{'email': attendee} for attendee in valid_attendees]
 
         if event.get('isOnlineMeeting', False):
             event_body['conferenceData'] = {
                 'createRequest': {'requestId': f"{int(datetime.datetime.now().timestamp())}", 'conferenceSolutionKey': {'type': 'hangoutsMeet'}}
-            }
+            }          
 
         try:
             response = service.events().insert(calendarId='primary', body=event_body, conferenceDataVersion=1).execute()
@@ -364,17 +398,37 @@ def editGoogleCalendarEvent(accessToken: str, refreshToken: str, jsonData, timez
 
 @app.route("/todaysSummary", methods=["POST"])
 def todaysSummary():
+    calendar_data = request.json.get("calendar")
+    current_date = request.json.get("currentDate")
 
-    calendar=request.json.get("calendar")
-    
-    response = genai.GenerativeModel('gemini-pro').generate_content(f"""You are my Personal Assistant, and I need a hand. Let's check what's up for today, {datetime.datetime.now()}, from my {calendar}. If we're looking at a day with zero plans, give me a cheerful heads-up to relax and enjoy my free time. The response should be a JSON object with a "message" key. The message needs to be in MARKDOWN format, featuring bullet points if there are any events. Aim for a tone that's light, breezy, and easy for anyone to get - no need for dates in ISO or anything too formal. IF there are no events then keep the message VERY SHORT. message should ONLY be in English.""").text.replace("`", '').replace("json", "")
+
+    # Format the calendar data as a JSON string if it's not already a string
+     # Construct the prompt to analyze the calendar and summarize today's events
+    prompt_text = (
+        
+        f"Analyze the provided calendar data : {calendar_data}"
+        f"summarize the events for the current date ({current_date}). "
+        f"Give me the summary of the events for the {current_date}"
+        "The summary should be friendly, casual"
+        "Give them a heads up"
+        "If there is a meeting, provide the meeting link"
+        "Make it short and concise as possible. "
+
+        "'should ONLY be a MARKDOWN TEXT"
+        f"If no events are scheudled for {current_date}, then tell them to enjoy their free time today!"
+    )
+
+    # Call the AI model with the constructed prompt
+    response = genai.GenerativeModel('gemini-1.0-pro').generate_content(prompt_text).text.replace("`", "").replace("json", "")
     print(response)
-    jsonData=json.loads(response)
-    print(jsonData)
-    if jsonData:
-        return jsonify({"success": True, "message":jsonData["message"], "response": jsonData["message"]}), 200
+
+
+    # Provide the response
+    if response:
+        return jsonify({"success": True, "message": response, "response": response}), 200
     else:
-        return jsonify({"success": True, "message": "Today's summary"})
+        # Provide a default message if the AI fails to generate a summary
+        return jsonify({"success": True, "message": "Enjoy your free time today!"}), 200
 
 if __name__ == "__main__":
     app.run(port=os.getenv("PORT", default=8000), host="0.0.0.0", debug=True)

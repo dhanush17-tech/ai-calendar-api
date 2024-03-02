@@ -7,3 +7,5 @@ eventModel.py
 db/
 .cosine
 .vercel
+cred.json
+credentials.json

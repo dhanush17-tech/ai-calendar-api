@@ -10,7 +10,7 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN python -m venv /app/venv
 RUN . /app/venv/bin/activate && pip install --no-cache-dir -r requirements.txt
-
+RUN export GOOGLE_APPLICATION_CREDENTIALS="cred.json"
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 

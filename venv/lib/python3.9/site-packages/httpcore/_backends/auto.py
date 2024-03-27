@@ -1,14 +1,15 @@
 import typing
 from typing import Optional
 
-from .._synchronization import current_async_library
+import sniffio
+
 from .base import SOCKET_OPTION, AsyncNetworkBackend, AsyncNetworkStream
 
 
 class AutoBackend(AsyncNetworkBackend):
     async def _init_backend(self) -> None:
         if not (hasattr(self, "_backend")):
-            backend = current_async_library()
+            backend = sniffio.current_async_library()
             if backend == "trio":
                 from .trio import TrioBackend
 

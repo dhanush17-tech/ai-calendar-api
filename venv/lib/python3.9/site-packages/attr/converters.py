@@ -70,20 +70,21 @@ def default_if_none(default=NOTHING, factory=None):
     .. versionadded:: 18.2.0
     """
     if default is NOTHING and factory is None:
-        msg = "Must pass either `default` or `factory`."
-        raise TypeError(msg)
+        raise TypeError("Must pass either `default` or `factory`.")
 
     if default is not NOTHING and factory is not None:
-        msg = "Must pass either `default` or `factory` but not both."
-        raise TypeError(msg)
+        raise TypeError(
+            "Must pass either `default` or `factory` but not both."
+        )
 
     if factory is not None:
         default = Factory(factory)
 
     if isinstance(default, Factory):
         if default.takes_self:
-            msg = "`takes_self` is not supported by default_if_none."
-            raise ValueError(msg)
+            raise ValueError(
+                "`takes_self` is not supported by default_if_none."
+            )
 
         def default_if_none_converter(val):
             if val is not None:
@@ -140,5 +141,4 @@ def to_bool(val):
     except TypeError:
         # Raised when "val" is not hashable (e.g., lists)
         pass
-    msg = f"Cannot convert value to bool: {val}"
-    raise ValueError(msg)
+    raise ValueError(f"Cannot convert value to bool: {val}")

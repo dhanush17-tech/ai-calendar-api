@@ -3,8 +3,11 @@ import json
 import os
 import re
 import time
+import anthropic
 from flask import Flask, request, jsonify
 from httpx import HTTPError, Timeout
+import requests
+from tool_use_package.tool_user import ToolUser
 
 # from embedchain import App
 from google.oauth2.credentials import Credentials
@@ -22,10 +25,19 @@ from vertexai.preview.generative_models import (
     Part,
     Tool,
 )
+import vertexai
+from vertexai.preview.generative_models import GenerativeModel, ChatSession
+import vertexai.preview.generative_models as generative_models
 
 
 app = Flask(__name__)
 os.environ["GOOGLE_API_KEY"] = os.environ.get("GOOGLE_API_KEY")
+os.environ["OPENAI_API_KEY"] = "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"
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+# client = anthropic.Anthropic(
+#     # defaults to os.environ.get("ANTHROPIC_API_KEY")
+#     api_key=os.environ.get("ANTHROPIC_API_KEY"),
+# )
 
 config = {
     "llm": {
@@ -48,8 +60,6 @@ config = {
     },
 }
 ecApp = embedchainApp.from_config(config=config)
-
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 @app.post("/add")
@@ -99,26 +109,32 @@ def list_events():
     accessToken = request.json.get("accessToken")
     refreshToken = request.json.get("refreshToken")
     userId = request.json.get("userId")
+    isTestUser = request.json.get("isTestUser")
+
+    print(refreshToken)
+    print(accessToken)
+    print("Thsi is test" + str(isTestUser))
+
+    if isTestUser:
+        events = [
+            {
+                "title": "Test Event",
+                "description": "This is a test event",
+                "location": "Test Location",
+                "startDate": "2022-05-05T12:00:00Z",
+                "endDate": "2022-05-05T14:00:00Z",
+                "timeZone": "UTC",
+                "meetingLink": "https://meet.google.com/abc-def-ghi",
+                "attendees": ["test@gmail.com"],
+                "id": "testId",
+                "isCompleted": True,
+            }
+        ]
+        return jsonify({"success": True, "events": events}), 200
 
     try:
         events = listGoogleCalendarEvents(accessToken, refreshToken)
-        ids = ecApp.db.get()
 
-        doc_hash = None
-        for meta_data in ids["metadatas"]:
-            if "userId" in meta_data and "type" in meta_data:
-                if meta_data["userId"] == userId and meta_data["type"] == "events":
-                    doc_hash = meta_data.get(
-                        "hash"
-                    )  # Using .get() as a safer alternative
-                    break
-
-        if doc_hash:
-            ecApp.delete(doc_hash)
-
-        ecApp.add(str(events), metadata={"userId": refreshToken, "type": "events"})
-        print
-        (ecApp.db.get())
         return jsonify({"success": True, "events": events}), 200
     except Exception as e:
         print(e)
@@ -207,6 +223,7 @@ def index():
 
 @app.route("/chat", methods=["POST"])
 async def chat():
+
     print("Dewdew")
     context = request.json.get("context")
     prompt = request.json.get("prompt")
@@ -215,6 +232,7 @@ async def chat():
     refreshToken = request.json.get("refreshToken")
     timeZone = request.json.get("timeZone")
     userId = request.json.get("userId")
+    isTestUser = request.json.get("isTestUser")
 
     current_date = request.json.get("currentDate")
     print(events)
@@ -222,139 +240,183 @@ async def chat():
     print(context)
     print(current_date)
 
-    jsonData = ecApp.query(
+    #     jsonData = client.chat.completions.create(
+    #         model="gpt-3.5-turbo",
+    #         max_tokens=1000,
+    #         temperature=0,
+    #         messages=[
+    #             {
+    #                 "role": "user",
+    #                 "content": [
+    #                     {
+    #                         "type": "text",
+    #                         "text": f"""
+    #                         Respond with a JSON structure tailored to user requests. Include "EDIT", "DELETE", "ADD" actions with the necessary fields in the specified order. Utilize "MORE" to request missing details. The "GENERAL" action should be used for broader inquiries or summaries related to the user's calendar, including a comprehensive summary of the day's schedule when asked. Summaries should be detailed within the 'message' itself, without an 'events' field for "GENERAL" actions. Structure responses in clear JSON, using human-readable date formats in messages.
+    # Reminders SHOULD also be considered as Events
+    # 1. Editing Events ("EDIT"):
+    # {{
+    #   "message": "Here are the updates to your events...",
+    #   "events": [
+    #     {{
+    #       "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
+    #       "endDate": "End time of the event in ISO8601 format. MANDATORY",
+    #       "title": "Event title.",
+    #       "description": "Event details (optional).",
+    #       "isOnlineMeeting": "true/false",
+    #       "attendees": ["List of event participants (optional)."],
+    #       "location": "Event location (optional).",
+    #       "id": "Event ID."
+    #     }}
+    #   ],
+    #   "action": "EDIT"
+    # }}
+    # 2. Deleting Events ("DELETE"):
+    # {{
+    #   "message": "The following events have been removed from your calendar...",
+    #   "ids": ["IDs of the events to be deleted."],
+    #   "action": "DELETE"
+    # }}
+    # 3. Adding Events ("ADD"):
+    # {{
+    #   "message": "New events have been added to your calendar...",
+    #   "events": [
+    #     {{
+    #       "startDate": "Event start time in ISO8601 format.",
+    #       "endDate": "Event end time in ISO8601 format.",
+    #       "title": "Event title.",
+    #       "description": "Event details (optional).",
+    #       "isOnlineMeeting": "true/false",
+    #       "attendees": ["Event participants (optional)."],
+    #       "location": "Event location (optional)."
+    #     }}
+    #   ],
+    #   "action": "ADD"
+    # }}
+    # 4. General Chat ("GENERAL"):
+    # For general inquiries or summaries related to the user's calendar:
+    # - If asked about the day: The 'message' should contain a comprehensive summary of all scheduled activities for the current date, including brief descriptions, start and end times, and meeting links if applicable, all in a conversational and human-like manner.
+    # - For other general calendar-related inquiries: The 'message' should address the query directly, providing relevant information or guidance.
+    # {{
+    #   "message": Reply to the user's request in a very chill human like way,
+    #   "action": "GENERAL"
+    # }}
+    # 5. Further Enquiries ("MORE"):
+    # {{
+    #   "message": "Could you provide more details on...",
+    #   "action": "MORE"
+    # }}
+    # 'message' SHOULD be a MARKDOWN TEXT
+    # - Context for our chat:
+    # {context}
+    # - Today's date is:
+    # {current_date}
+    # - The calendar events:
+    # {events}
+    # - Your request:
+    # {prompt}""",
+    #                     },
+    #                 ],
+    #             },
+    #             {
+    #                 "role": "assistant",
+    #                 "content": [{"type": "text", "text": "{"}],
+    #             },
+    #         ],
+    #     )
+    #     print(jsonData.choices[0].message.content)
+    #     jsonData=   jsonData.choices[0].message.content
+    #     # pattern = re.compile(r"(.*\})", re.DOTALL)
+    #     # match = pattern.search(jsonData.json()["choices"][0]["message"]["content"])
+    #     # result = match.group(1) if match else ""
+    #     # result = "{" + json()["choices"][0]["message"]["content"]
+    #     # print(result.strip())
+    #     if jsonData.strip()[0]!="{":
+    #         jsonData= "{" + jsonData
+
+
+    config = {"max_output_tokens": 2048, "temperature": 0.9, "top_p": 1}
+    model = GenerativeModel("gemini-1.0-pro-001")
+    chat = model.start_chat()
+    output = chat.send_message(
         f"""
-    Respond with JSON structure based on user request. For "EDIT", "DELETE", and "ADD" actions, include required fields in specified order. Ask for missing details with "MORE". Summarize day with "GENERAL". Use human readable date formats in messages. Structure responses as clear JSON.
-1. Editing Events ("EDIT"):
-{{
-  "message": "Summary of the changes you've made.  Answer to the question in a chill human like way",
-  "events": [
-    {{
-      "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
-      "endDate": "End time of the event in ISO8601 format. MANDATORY",
-      "title": "Brief description of the event.",
-      "description": "Further details about the event (optional).",
-      "isOnlineMeeting": True or False,
-      "attendees": ["List of participants involved in the event (optional)."],
-      "location": "Physical location of the event (optional).",
-      "id": "ID of the event to be edited."
-    }}
-  ],
-  "action": "EDIT"
-}} 
-2. Deleting Events ("DELETE"):
-'ids' field is REQUIRED for the "DELETE" action. The ids field should contain the list of IDs of the events that should be deleted.
-{{
-  "message": "Summary of the events you've deleted.  Answer to the question in a chill human like way",
-  "ids": ["ONLY THE List of IDs of the events that SHOULD BE deleted."],
-  "action": "DELETE"
-}}
-3. Adding Events ("ADD"): 
-startDate should only be added to the future from the current date
-    {{
-    "message": "Summary of the changes you've made. The answer should be relavant to the 'message'. Answer to the question in a chill human like way",
-    "events": [
-        {{
-        "startDate": "Start time of the event in ISO8601 format.",
-        "endDate": "End time of the event in ISO8601 format.",
-        "title": "Brief description of the event.",
-        "description": "Further details about the event (optional).",
-        "isOnlineMeeting": True or False,
-        "attendees": ["List of participants involved in the event (optional)."],
-        "location": "Physical location of the event (optional)."
-        }}
-    ],
-    "action": "ADD"
-    }}
-4. General Chat ("GENERAL"):
-If asked for the meeeing link, provide the relavant meeting link. The link should contain http.
-{{
-  "message": Answer to the question in a chill human like way,
-  "action": "GENERAL"
-}}
-5. Futhur Enquiries (MORE):
-    {{
-    "message": Ask for the necessary details,
-    "action": "MORE"
-    }}
-- The context for our chat:
-{context}
--current date is in ISO8601 format: {current_date}
--The calendar events
-{events}
-- your prompt 
-{prompt}
-If the action is DELETE, the ids field should contain the list of IDs of the events that should be deleted.
-If the meeting is online leave the location field empty and set the isOnlineMeeting to True.
-""",
-        where={"userId": userId, "type": "events"},
-    )
+    #                         Respond with a JSON structure tailored to user requests. Include "EDIT", "DELETE", "ADD" actions with the necessary fields in the specified order. Utilize "MORE" to request missing details. The "GENERAL" action should be used for broader inquiries or summaries related to the user's calendar, including a comprehensive summary of the day's schedule when asked. Summaries should be detailed within the 'message' itself, without an 'events' field for "GENERAL" actions. Structure responses in clear JSON, using human-readable date formats in messages.
+    # Reminders SHOULD also be considered as Events
+    # 1. Editing Events ("EDIT"):
+    # {{
+    #   "message": "Here are the updates to your events...",
+    #   "events": [
+    #     {{
+    #       "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
+    #       "endDate": "End time of the event in ISO8601 format. MANDATORY",
+    #       "title": "Event title.",
+    #       "description": "Event details (optional).",
+    #       "isOnlineMeeting": "true/false",
+    #       "attendees": ["List of event participants (optional)."],
+    #       "location": "Event location (optional).",
+    #       "id": "Event ID."
+    #     }}
+    #   ],
+    #   "action": "EDIT"
+    # }}
+    # 2. Deleting Events ("DELETE"):
+    # {{
+    #   "message": "The following events have been removed from your calendar...",
+    #   "ids": ["IDs of the events to be deleted."],
+    #   "action": "DELETE"
+    # }}
+    # 3. Adding Events ("ADD"):
+    # {{
+    #   "message": "New events have been added to your calendar...",
+    #   "events": [
+    #     {{
+    #       "startDate": "Event start time in ISO8601 format.",
+    #       "endDate": "Event end time in ISO8601 format.",
+    #       "title": "Event title.",
+    #       "description": "Event details (optional).",
+    #       "isOnlineMeeting": "true/false",
+    #       "attendees": ["Event participants (optional)."],
+    #       "location": "Event location (optional)."
+    #     }}
+    #   ],
+    #   "action": "ADD"
+    # }}
+    # 4. General Chat ("GENERAL"):
+    # For general inquiries or summaries related to the user's calendar:
+    # - If asked about the day: The 'message' should contain a comprehensive summary of all scheduled activities for the current date, including brief descriptions, start and end times, and meeting links if applicable, all in a conversational and human-like manner.
+    # - For other general calendar-related inquiries: The 'message' should address the query directly, providing relevant information or guidance.
+    # {{
+    #   "message": Reply to the user's request in a very chill human like way,
+    #   "action": "GENERAL"
+    # }}
+    # 5. Further Enquiries ("MORE"):
+    # {{
+    #   "message": "Could you provide more details on...",
+    #   "action": "MORE"
+    # }}
+    # 'message' SHOULD be a MARKDOWN TEXT
+    # - Context for our chat:
+    # {context}
+    # - Today's date is:
+    # {current_date}
+    # - The calendar events:
+    # {events}
+    # - Your request:
+    # {prompt}""",
+        generation_config=config,
+        safety_settings={
+            generative_models.HarmCategory.HARM_CATEGORY_HATE_SPEECH: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+            generative_models.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+            generative_models.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+            generative_models.HarmCategory.HARM_CATEGORY_HARASSMENT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+        },
+    ).text
 
-    print(jsonData)
-    jsonData = json.loads(jsonData.replace("True", "true").replace("False", "false"))
+    print(output)
+    jsonData = json.loads(output, strict=False)
+
     # return jsonify({"success": True, "message":jsonData["message"], "response": jsonData["message"]}), 200
-    if jsonData["action"] == "EDIT":
-        print("Edit event")
-        edit_event = editGoogleCalendarEvent(
-            accessToken, refreshToken, jsonData, timeZone
-        )
-        if edit_event:
-            return jsonify(
-                {
-                    "success": True,
-                    "message": jsonData["message"],
-                    "response": jsonData["message"],
-                    "action": jsonData["action"],
-                }
-            )
-        else:
-            return jsonify({"success": False, "response": jsonData})
 
-    elif jsonData["action"] == "DELETE":
-        print("Delete event")
-        delete_event = deleteGoogleCalendarEvent(
-            accessToken,
-            refreshToken,
-            jsonData,
-        )
-        if delete_event:
-            return jsonify(
-                {
-                    "success": True,
-                    "message": jsonData["message"],
-                    "response": jsonData["message"],
-                    "action": jsonData["action"],
-                }
-            )
-        else:
-            return jsonify({"success": False, "response": jsonData})
-    elif jsonData["action"] == "ADD":
-
-        add_event = create_google_calendar_events(
-            jsonData, accessToken, refreshToken, timeZone
-        )
-        if add_event:
-            return jsonify(
-                {
-                    "success": True,
-                    "message": jsonData["message"],
-                    "response": jsonData["message"],
-                    "action": jsonData["action"],
-                }
-            )
-        else:
-            return jsonify({"success": False, "response": jsonData})
-    elif jsonData["action"] == "MORE":
-        print("More event")
-        return jsonify(
-            {
-                "success": True,
-                "message": jsonData["message"],
-                "response": jsonData["message"],
-                "action": jsonData["action"],
-            }
-        )
-    elif jsonData["action"] == "GENERAL":
+    if jsonData["action"] == "GENERAL":
         print("General chat")
         return jsonify(
             {
@@ -364,15 +426,87 @@ If the meeting is online leave the location field empty and set the isOnlineMeet
                 "action": jsonData["action"],
             }
         )
-    else:
+    if isTestUser:
         return jsonify(
             {
                 "success": True,
-                "message": jsonData["message"],
-                "response": jsonData["message"],
+                "message": "Please signin with your google account to make changes to your calendar",
+                "response": "Please signin with your google account to make changes to your calendar",
                 "action": jsonData["action"],
             }
         )
+    else:
+        if jsonData["action"] == "EDIT":
+            print("Edit event")
+            edit_event = editGoogleCalendarEvent(
+                accessToken, refreshToken, jsonData, timeZone
+            )
+            if edit_event:
+
+                return jsonify(
+                    {
+                        "success": True,
+                        "message": jsonData["message"],
+                        "response": jsonData["message"],
+                        "action": jsonData["action"],
+                    }
+                )
+        else:
+
+            if jsonData["action"] == "DELETE":
+                print("Delete event")
+                delete_event = deleteGoogleCalendarEvent(
+                    accessToken,
+                    refreshToken,
+                    jsonData,
+                )
+                if delete_event:
+                    return jsonify(
+                        {
+                            "success": True,
+                            "message": jsonData["message"],
+                            "response": jsonData["message"],
+                            "action": jsonData["action"],
+                        }
+                    )
+                else:
+                    return jsonify({"success": False, "response": jsonData})
+            elif jsonData["action"] == "ADD":
+
+                add_event = create_google_calendar_events(
+                    jsonData, accessToken, refreshToken, timeZone
+                )
+                if add_event:
+
+                    return jsonify(
+                        {
+                            "success": True,
+                            "message": jsonData["message"],
+                            "response": jsonData["message"],
+                            "action": jsonData["action"],
+                        }
+                    )
+                else:
+                    return jsonify({"success": False, "response": jsonData})
+            elif jsonData["action"] == "MORE":
+                print("More event")
+                return jsonify(
+                    {
+                        "success": True,
+                        "message": jsonData["message"],
+                        "response": jsonData["message"],
+                        "action": jsonData["action"],
+                    }
+                )
+            else:
+                return jsonify(
+                    {
+                        "success": True,
+                        "message": jsonData["message"],
+                        "response": jsonData["message"],
+                        "action": jsonData["action"],
+                    }
+                )
 
 
 def validate_email(email):
@@ -554,12 +688,31 @@ def editGoogleCalendarEvent(accessToken: str, refreshToken: str, jsonData, timez
 def todaysSummary():
     calendar_data = request.json.get("calendar")
     current_date = request.json.get("currentDate")
-    userId = request.json.get("userId")
-
+    accessToken = request.json.get("accessToken")
+    refreshToken = request.json.get("refreshToken")
+    currentSummary = request.json.get("currentSummary")
     # Format the calendar data as a JSON string if it's not already a string
     # Construct the prompt to analyze the calendar and summarize today's events
+
+    print(
+        "Thsi is"
+        + str(
+            currentSummary != ""
+            and calendar_data == listGoogleCalendarEvents(accessToken, refreshToken)
+        )
+    )
+    if currentSummary != "" and calendar_data == listGoogleCalendarEvents(
+        accessToken, refreshToken
+    ):
+        return (
+            jsonify(
+                {"success": True, "message": currentSummary, "response": currentSummary}
+            ),
+            200,
+        )
+
     prompt_text = (
-        f"Analyze the provided calendar data : {calendar_data}"
+        f"Analyze the provided calendar data:{calendar_data}"
         f"summarize the events for the current date ({current_date}). "
         f"Give me the summary of the events for the {current_date}"
         "The summary should be friendly, casual"
@@ -570,13 +723,21 @@ def todaysSummary():
         f"If no events are scheudled for {current_date}, then tell them to enjoy their free time today!"
     )
 
-    # Call the AI model with the constructed prompt
-    response = ecApp.query(
-        prompt_text,
-        where={"userId": userId},
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {"role": "user", "content": [{"type": "text", "text": prompt_text}]},
+            {
+                "role": "assistant",
+                "content": [{"type": "text", "text": "{"}],
+            },
+        ],
     )
-    print(response)
 
+    response = response.choices[0].message.content
+    print(response)
     # Provide the response
     if response:
         return (

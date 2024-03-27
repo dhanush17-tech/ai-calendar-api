@@ -97,21 +97,23 @@ class _InstanceOfValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if not isinstance(value, self.type):
-            msg = "'{name}' must be {type!r} (got {value!r} that is a {actual!r}).".format(
-                name=attr.name,
-                type=self.type,
-                actual=value.__class__,
-                value=value,
-            )
             raise TypeError(
-                msg,
+                "'{name}' must be {type!r} (got {value!r} that is a "
+                "{actual!r}).".format(
+                    name=attr.name,
+                    type=self.type,
+                    actual=value.__class__,
+                    value=value,
+                ),
                 attr,
                 self.type,
                 value,
             )
 
     def __repr__(self):
-        return f"<instance_of validator for type {self.type!r}>"
+        return "<instance_of validator for type {type!r}>".format(
+            type=self.type
+        )
 
 
 def instance_of(type):
@@ -140,18 +142,20 @@ class _MatchesReValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if not self.match_func(value):
-            msg = "'{name}' must match regex {pattern!r} ({value!r} doesn't)".format(
-                name=attr.name, pattern=self.pattern.pattern, value=value
-            )
             raise ValueError(
-                msg,
+                "'{name}' must match regex {pattern!r}"
+                " ({value!r} doesn't)".format(
+                    name=attr.name, pattern=self.pattern.pattern, value=value
+                ),
                 attr,
                 self.pattern,
                 value,
             )
 
     def __repr__(self):
-        return f"<matches_re validator for pattern {self.pattern!r}>"
+        return "<matches_re validator for pattern {pattern!r}>".format(
+            pattern=self.pattern
+        )
 
 
 def matches_re(regex, flags=0, func=None):
@@ -172,17 +176,22 @@ def matches_re(regex, flags=0, func=None):
     """
     valid_funcs = (re.fullmatch, None, re.search, re.match)
     if func not in valid_funcs:
-        msg = "'func' must be one of {}.".format(
-            ", ".join(
-                sorted(e and e.__name__ or "None" for e in set(valid_funcs))
+        raise ValueError(
+            "'func' must be one of {}.".format(
+                ", ".join(
+                    sorted(
+                        e and e.__name__ or "None" for e in set(valid_funcs)
+                    )
+                )
             )
         )
-        raise ValueError(msg)
 
     if isinstance(regex, Pattern):
         if flags:
-            msg = "'flags' can only be used with a string pattern; pass flags to re.compile() instead"
-            raise TypeError(msg)
+            raise TypeError(
+                "'flags' can only be used with a string pattern; "
+                "pass flags to re.compile() instead"
+            )
         pattern = regex
     else:
         pattern = re.compile(regex, flags)
@@ -206,18 +215,20 @@ class _ProvidesValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if not self.interface.providedBy(value):
-            msg = "'{name}' must provide {interface!r} which {value!r} doesn't.".format(
-                name=attr.name, interface=self.interface, value=value
-            )
             raise TypeError(
-                msg,
+                "'{name}' must provide {interface!r} which {value!r} "
+                "doesn't.".format(
+                    name=attr.name, interface=self.interface, value=value
+                ),
                 attr,
                 self.interface,
                 value,
             )
 
     def __repr__(self):
-        return f"<provides validator for interface {self.interface!r}>"
+        return "<provides validator for interface {interface!r}>".format(
+            interface=self.interface
+        )
 
 
 def provides(interface):
@@ -258,7 +269,9 @@ class _OptionalValidator:
         self.validator(inst, attr, value)
 
     def __repr__(self):
-        return f"<optional validator for {self.validator!r} or None>"
+        return "<optional validator for {what} or None>".format(
+            what=repr(self.validator)
+        )
 
 
 def optional(validator):
@@ -291,16 +304,19 @@ class _InValidator:
             in_options = False
 
         if not in_options:
-            msg = f"'{attr.name}' must be in {self.options!r} (got {value!r})"
             raise ValueError(
-                msg,
+                "'{name}' must be in {options!r} (got {value!r})".format(
+                    name=attr.name, options=self.options, value=value
+                ),
                 attr,
                 self.options,
                 value,
             )
 
     def __repr__(self):
-        return f"<in_ validator with options {self.options!r}>"
+        return "<in_ validator with options {options!r}>".format(
+            options=self.options
+        )
 
 
 def in_(options):
@@ -386,8 +402,11 @@ class _DeepIterable:
             else f" {self.iterable_validator!r}"
         )
         return (
-            f"<deep_iterable validator for{iterable_identifier}"
-            f" iterables of {self.member_validator!r}>"
+            "<deep_iterable validator for{iterable_identifier}"
+            " iterables of {member!r}>"
+        ).format(
+            iterable_identifier=iterable_identifier,
+            member=self.member_validator,
         )
 
 
@@ -458,11 +477,19 @@ class _NumberValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if not self.compare_func(value, self.bound):
-            msg = f"'{attr.name}' must be {self.compare_op} {self.bound}: {value}"
-            raise ValueError(msg)
+            raise ValueError(
+                "'{name}' must be {op} {bound}: {value}".format(
+                    name=attr.name,
+                    op=self.compare_op,
+                    bound=self.bound,
+                    value=value,
+                )
+            )
 
     def __repr__(self):
-        return f"<Validator for x {self.compare_op} {self.bound}>"
+        return "<Validator for x {op} {bound}>".format(
+            op=self.compare_op, bound=self.bound
+        )
 
 
 def lt(val):
@@ -522,8 +549,11 @@ class _MaxLengthValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if len(value) > self.max_length:
-            msg = f"Length of '{attr.name}' must be <= {self.max_length}: {len(value)}"
-            raise ValueError(msg)
+            raise ValueError(
+                "Length of '{name}' must be <= {max}: {len}".format(
+                    name=attr.name, max=self.max_length, len=len(value)
+                )
+            )
 
     def __repr__(self):
         return f"<max_len validator for {self.max_length}>"
@@ -550,8 +580,11 @@ class _MinLengthValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if len(value) < self.min_length:
-            msg = f"Length of '{attr.name}' must be >= {self.min_length}: {len(value)}"
-            raise ValueError(msg)
+            raise ValueError(
+                "Length of '{name}' must be => {min}: {len}".format(
+                    name=attr.name, min=self.min_length, len=len(value)
+                )
+            )
 
     def __repr__(self):
         return f"<min_len validator for {self.min_length}>"
@@ -578,16 +611,22 @@ class _SubclassOfValidator:
         We use a callable class to be able to change the ``__repr__``.
         """
         if not issubclass(value, self.type):
-            msg = f"'{attr.name}' must be a subclass of {self.type!r} (got {value!r})."
             raise TypeError(
-                msg,
+                "'{name}' must be a subclass of {type!r} "
+                "(got {value!r}).".format(
+                    name=attr.name,
+                    type=self.type,
+                    value=value,
+                ),
                 attr,
                 self.type,
                 value,
             )
 
     def __repr__(self):
-        return f"<subclass_of validator for type {self.type!r}>"
+        return "<subclass_of validator for type {type!r}>".format(
+            type=self.type
+        )
 
 
 def _subclass_of(type):
@@ -641,7 +680,7 @@ class _NotValidator:
 
     def __repr__(self):
         return (
-            "<not_ validator wrapping {what!r}, capturing {exc_types!r}>"
+            "<not_ validator wrapping {what!r}, " "capturing {exc_types!r}>"
         ).format(
             what=self.validator,
             exc_types=self.exc_types,

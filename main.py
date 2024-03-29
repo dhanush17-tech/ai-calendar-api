@@ -8,6 +8,8 @@ from flask import Flask, request, jsonify
 from httpx import HTTPError, Timeout
 import requests
 from tool_use_package.tool_user import ToolUser
+from google.oauth2 import service_account
+
 
 # from embedchain import App
 from google.oauth2.credentials import Credentials
@@ -18,17 +20,10 @@ import httpx
 from openai import OpenAI
 from embedchain import App as embedchainApp
 
-from vertexai.preview.generative_models import (
-    Content,
-    FunctionDeclaration,
-    GenerativeModel,
-    Part,
-    Tool,
-)
 import vertexai
-from vertexai.preview.generative_models import GenerativeModel, ChatSession
+from vertexai.preview.generative_models import GenerativeModel
 import vertexai.preview.generative_models as generative_models
-
+import google.generativeai as genai
 
 app = Flask(__name__)
 os.environ["GOOGLE_API_KEY"] = os.environ.get("GOOGLE_API_KEY")
@@ -38,7 +33,7 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 #     # defaults to os.environ.get("ANTHROPIC_API_KEY")
 #     api_key=os.environ.get("ANTHROPIC_API_KEY"),
 # )
-
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 config = {
     "llm": {
         "provider": "google",
@@ -231,7 +226,6 @@ async def chat():
     accessToken = request.json.get("accessToken")
     refreshToken = request.json.get("refreshToken")
     timeZone = request.json.get("timeZone")
-    userId = request.json.get("userId")
     isTestUser = request.json.get("isTestUser")
 
     current_date = request.json.get("currentDate")
@@ -240,105 +234,13 @@ async def chat():
     print(context)
     print(current_date)
 
-    #     jsonData = client.chat.completions.create(
-    #         model="gpt-3.5-turbo",
-    #         max_tokens=1000,
-    #         temperature=0,
-    #         messages=[
-    #             {
-    #                 "role": "user",
-    #                 "content": [
-    #                     {
-    #                         "type": "text",
-    #                         "text": f"""
-    #                         Respond with a JSON structure tailored to user requests. Include "EDIT", "DELETE", "ADD" actions with the necessary fields in the specified order. Utilize "MORE" to request missing details. The "GENERAL" action should be used for broader inquiries or summaries related to the user's calendar, including a comprehensive summary of the day's schedule when asked. Summaries should be detailed within the 'message' itself, without an 'events' field for "GENERAL" actions. Structure responses in clear JSON, using human-readable date formats in messages.
-    # Reminders SHOULD also be considered as Events
-    # 1. Editing Events ("EDIT"):
-    # {{
-    #   "message": "Here are the updates to your events...",
-    #   "events": [
-    #     {{
-    #       "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
-    #       "endDate": "End time of the event in ISO8601 format. MANDATORY",
-    #       "title": "Event title.",
-    #       "description": "Event details (optional).",
-    #       "isOnlineMeeting": "true/false",
-    #       "attendees": ["List of event participants (optional)."],
-    #       "location": "Event location (optional).",
-    #       "id": "Event ID."
-    #     }}
-    #   ],
-    #   "action": "EDIT"
-    # }}
-    # 2. Deleting Events ("DELETE"):
-    # {{
-    #   "message": "The following events have been removed from your calendar...",
-    #   "ids": ["IDs of the events to be deleted."],
-    #   "action": "DELETE"
-    # }}
-    # 3. Adding Events ("ADD"):
-    # {{
-    #   "message": "New events have been added to your calendar...",
-    #   "events": [
-    #     {{
-    #       "startDate": "Event start time in ISO8601 format.",
-    #       "endDate": "Event end time in ISO8601 format.",
-    #       "title": "Event title.",
-    #       "description": "Event details (optional).",
-    #       "isOnlineMeeting": "true/false",
-    #       "attendees": ["Event participants (optional)."],
-    #       "location": "Event location (optional)."
-    #     }}
-    #   ],
-    #   "action": "ADD"
-    # }}
-    # 4. General Chat ("GENERAL"):
-    # For general inquiries or summaries related to the user's calendar:
-    # - If asked about the day: The 'message' should contain a comprehensive summary of all scheduled activities for the current date, including brief descriptions, start and end times, and meeting links if applicable, all in a conversational and human-like manner.
-    # - For other general calendar-related inquiries: The 'message' should address the query directly, providing relevant information or guidance.
-    # {{
-    #   "message": Reply to the user's request in a very chill human like way,
-    #   "action": "GENERAL"
-    # }}
-    # 5. Further Enquiries ("MORE"):
-    # {{
-    #   "message": "Could you provide more details on...",
-    #   "action": "MORE"
-    # }}
-    # 'message' SHOULD be a MARKDOWN TEXT
-    # - Context for our chat:
-    # {context}
-    # - Today's date is:
-    # {current_date}
-    # - The calendar events:
-    # {events}
-    # - Your request:
-    # {prompt}""",
-    #                     },
-    #                 ],
-    #             },
-    #             {
-    #                 "role": "assistant",
-    #                 "content": [{"type": "text", "text": "{"}],
-    #             },
-    #         ],
-    #     )
-    #     print(jsonData.choices[0].message.content)
-    #     jsonData=   jsonData.choices[0].message.content
-    #     # pattern = re.compile(r"(.*\})", re.DOTALL)
-    #     # match = pattern.search(jsonData.json()["choices"][0]["message"]["content"])
-    #     # result = match.group(1) if match else ""
-    #     # result = "{" + json()["choices"][0]["message"]["content"]
-    #     # print(result.strip())
-    #     if jsonData.strip()[0]!="{":
-    #         jsonData= "{" + jsonData
-
-
     config = {"max_output_tokens": 2048, "temperature": 0.9, "top_p": 1}
-    model = GenerativeModel("gemini-1.0-pro-001")
-    chat = model.start_chat()
-    output = chat.send_message(
-        f"""
+    # model = GenerativeModel("gemini-1.0-pro-001")
+
+    chat_prompt = genai.GenerativeModel("gemini-1.0-pro-001").start_chat()
+    output = (
+        chat_prompt.send_message(
+            f"""
     #                         Respond with a JSON structure tailored to user requests. Include "EDIT", "DELETE", "ADD" actions with the necessary fields in the specified order. Utilize "MORE" to request missing details. The "GENERAL" action should be used for broader inquiries or summaries related to the user's calendar, including a comprehensive summary of the day's schedule when asked. Summaries should be detailed within the 'message' itself, without an 'events' field for "GENERAL" actions. Structure responses in clear JSON, using human-readable date formats in messages.
     # Reminders SHOULD also be considered as Events
     # 1. Editing Events ("EDIT"):
@@ -402,14 +304,11 @@ async def chat():
     # {events}
     # - Your request:
     # {prompt}""",
-        generation_config=config,
-        safety_settings={
-            generative_models.HarmCategory.HARM_CATEGORY_HATE_SPEECH: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-            generative_models.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-            generative_models.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-            generative_models.HarmCategory.HARM_CATEGORY_HARASSMENT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-        },
-    ).text
+            generation_config=config,
+        )
+        .text.replace("`", "")
+        .replace("json", "")
+    )
 
     print(output)
     jsonData = json.loads(output, strict=False)
@@ -518,12 +417,8 @@ def validate_email(email):
 def create_google_calendar_events(events, accessToken, refreshToken, timezone):
     print("Add event")
     print(accessToken)
-    creds = Credentials(
-        token=accessToken,
-        refresh_token=refreshToken,
-        token_uri=os.getenv("TOKEN_URI"),
-        client_id=os.getenv("CLIENT_ID"),
-        client_secret=os.getenv("CLIENT_SECRET"),
+    creds = service_account.Credentials.from_service_account_file(
+        "./cred.json",
         scopes=["https://www.googleapis.com/auth/calendar"],
     )
     service = build("calendar", "v3", credentials=creds)
@@ -603,12 +498,8 @@ def create_google_calendar_events(events, accessToken, refreshToken, timezone):
 
 
 def deleteGoogleCalendarEvent(accessToken: str, refreshToken: str, eventIds):
-    creds = Credentials(
-        token=accessToken,
-        refresh_token=refreshToken,
-        token_uri="https://oauth2.googleapis.com/token",
-        client_id=os.getenv("CLIENT_ID"),
-        client_secret=os.getenv("CLIENT_SECRET"),
+    creds = service_account.Credentials.from_service_account_file(
+        "./cred.json",
         scopes=["https://www.googleapis.com/auth/calendar"],
     )
     service = build("calendar", "v3", credentials=creds)
@@ -625,12 +516,8 @@ def deleteGoogleCalendarEvent(accessToken: str, refreshToken: str, eventIds):
 
 
 def editGoogleCalendarEvent(accessToken: str, refreshToken: str, jsonData, timezone):
-    creds = Credentials(
-        token=accessToken,
-        refresh_token=refreshToken,
-        token_uri="https://oauth2.googleapis.com/token",
-        client_id=os.getenv("CLIENT_ID"),
-        client_secret=os.getenv("CLIENT_SECRET"),
+    creds = service_account.Credentials.from_service_account_file(
+        "./cred.json",
         scopes=["https://www.googleapis.com/auth/calendar"],
     )
     service = build("calendar", "v3", credentials=creds)

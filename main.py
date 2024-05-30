@@ -32,7 +32,7 @@ import vertexai.preview.generative_models as generative_models
 
 app = Flask(__name__)
 os.environ["GOOGLE_API_KEY"] = os.environ.get("GOOGLE_API_KEY")
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = os.environ.get("OPENAI_API_KEY")
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # client = anthropic.Anthropic(
 #     # defaults to os.environ.get("ANTHROPIC_API_KEY")
@@ -111,9 +111,25 @@ def list_events():
     userId = request.json.get("userId")
     isTestUser = request.json.get("isTestUser")
 
-    print(refreshToken)
-    print(accessToken)
-    print("Thsi is test" + str(isTestUser))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     if isTestUser:
         events = [
@@ -224,7 +240,6 @@ def index():
 @app.route("/chat", methods=["POST"])
 async def chat():
 
-    print("Dewdew")
     context = request.json.get("context")
     prompt = request.json.get("prompt")
     events = request.json.get("events")
@@ -235,103 +250,7 @@ async def chat():
     isTestUser = request.json.get("isTestUser")
 
     current_date = request.json.get("currentDate")
-    print(events)
-    print(prompt)
-    print(context)
-    print(current_date)
-
-    #     jsonData = client.chat.completions.create(
-    #         model="gpt-3.5-turbo",
-    #         max_tokens=1000,
-    #         temperature=0,
-    #         messages=[
-    #             {
-    #                 "role": "user",
-    #                 "content": [
-    #                     {
-    #                         "type": "text",
-    #                         "text": f"""
-    #                         Respond with a JSON structure tailored to user requests. Include "EDIT", "DELETE", "ADD" actions with the necessary fields in the specified order. Utilize "MORE" to request missing details. The "GENERAL" action should be used for broader inquiries or summaries related to the user's calendar, including a comprehensive summary of the day's schedule when asked. Summaries should be detailed within the 'message' itself, without an 'events' field for "GENERAL" actions. Structure responses in clear JSON, using human-readable date formats in messages.
-    # Reminders SHOULD also be considered as Events
-    # 1. Editing Events ("EDIT"):
-    # {{
-    #   "message": "Here are the updates to your events...",
-    #   "events": [
-    #     {{
-    #       "startDate": "Start time of the event in ISO8601 format. MANDATORY.",
-    #       "endDate": "End time of the event in ISO8601 format. MANDATORY",
-    #       "title": "Event title.",
-    #       "description": "Event details (optional).",
-    #       "isOnlineMeeting": "true/false",
-    #       "attendees": ["List of event participants (optional)."],
-    #       "location": "Event location (optional).",
-    #       "id": "Event ID."
-    #     }}
-    #   ],
-    #   "action": "EDIT"
-    # }}
-    # 2. Deleting Events ("DELETE"):
-    # {{
-    #   "message": "The following events have been removed from your calendar...",
-    #   "ids": ["IDs of the events to be deleted."],
-    #   "action": "DELETE"
-    # }}
-    # 3. Adding Events ("ADD"):
-    # {{
-    #   "message": "New events have been added to your calendar...",
-    #   "events": [
-    #     {{
-    #       "startDate": "Event start time in ISO8601 format.",
-    #       "endDate": "Event end time in ISO8601 format.",
-    #       "title": "Event title.",
-    #       "description": "Event details (optional).",
-    #       "isOnlineMeeting": "true/false",
-    #       "attendees": ["Event participants (optional)."],
-    #       "location": "Event location (optional)."
-    #     }}
-    #   ],
-    #   "action": "ADD"
-    # }}
-    # 4. General Chat ("GENERAL"):
-    # For general inquiries or summaries related to the user's calendar:
-    # - If asked about the day: The 'message' should contain a comprehensive summary of all scheduled activities for the current date, including brief descriptions, start and end times, and meeting links if applicable, all in a conversational and human-like manner.
-    # - For other general calendar-related inquiries: The 'message' should address the query directly, providing relevant information or guidance.
-    # {{
-    #   "message": Reply to the user's request in a very chill human like way,
-    #   "action": "GENERAL"
-    # }}
-    # 5. Further Enquiries ("MORE"):
-    # {{
-    #   "message": "Could you provide more details on...",
-    #   "action": "MORE"
-    # }}
-    # 'message' SHOULD be a MARKDOWN TEXT
-    # - Context for our chat:
-    # {context}
-    # - Today's date is:
-    # {current_date}
-    # - The calendar events:
-    # {events}
-    # - Your request:
-    # {prompt}""",
-    #                     },
-    #                 ],
-    #             },
-    #             {
-    #                 "role": "assistant",
-    #                 "content": [{"type": "text", "text": "{"}],
-    #             },
-    #         ],
-    #     )
-    #     print(jsonData.choices[0].message.content)
-    #     jsonData=   jsonData.choices[0].message.content
-    #     # pattern = re.compile(r"(.*\})", re.DOTALL)
-    #     # match = pattern.search(jsonData.json()["choices"][0]["message"]["content"])
-    #     # result = match.group(1) if match else ""
-    #     # result = "{" + json()["choices"][0]["message"]["content"]
-    #     # print(result.strip())
-    #     if jsonData.strip()[0]!="{":
-    #         jsonData= "{" + jsonData
+   
 
 
     config = {"max_output_tokens": 2048, "temperature": 0.9, "top_p": 1}
